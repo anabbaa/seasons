@@ -14,36 +14,27 @@ let months = [
     "october",
     "november",
   ];
-  let seasons = ["Winter", "Spring", "Summer", "Autumn"];
-  const cur = (monthname)=>{
-   switch (months.indexOf(monthname))
-      {
-          case 0:
-          case 1:
-          case 2:
-        return seasons[0];
-        case 3:
-         case 4:
-         case 5:
-         return seasons[1];
-     case 6:
-     case 7:
-    case 8:
-   return seasons[2];
-    case 9:
-    case 10:
-    case 11:
-    return seasons[3];
+  const curr = (monthname)=>{
+      let ses = months.indexOf(monthname);
+      if (ses == 0 || ses == 1 || ses == 2){
+          return seasons[0];
       }
-      
-};
-  let month = str.toLowerCase().split(" ").filter
-  ((word)=> months.includes(word)).join("");
-  
-  return month == "" ? `sorry`: 
-  `you have entred ${month} which is ${cur(month)}`;
-
-};
+      else if ( ses == 3 || ses == 4 || ses == 5 ){
+          return seasons[1]
+      }
+      else if(ses == 6 || ses == 7|| ses == 8){
+          return seasons[2]
+      }
+      else if(ses == 9 || ses == 10 || ses == 11){
+          return seasons|[3]
+      }
+  }
+  let seasons = ["Winter", "Spring", "Summer", "Autumn"];
+let month = str.toLowerCase().split(" ").filter
+((word)=> months.includes(word)).join("");
+return month == "" ? `sorry`:
+`you have entred ${month} which is ${curr(month)}`
+}
 console.log(monthtocheck("I love december"));
 
 
